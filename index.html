@@ -8,67 +8,21 @@
   <link rel="stylesheet" href="./assets/css/botao.css"></link>
 </head>
 
-<body ng-app="monitoramento" ng-controller="monitoramentoController">
-  <div class='container'>
-    <div class='container_inner'>
-      <img src="./assets/img/LogoInicio.png" width="200px" height="200px"></img>
-      <h1>Sistema de Monitoramento</h1>
-    <button id="myBtn" class="button" style="vertical-align:middle"><span>Abrir o mapa</span></button>
+<body ng-app="app" ng-controller="appController">
 
-      </br></br>
-      <br>
-      <div class='tiles'>
-        <div class='tiles_tile' ng-repeat="elemento in computadores">
-          <a href="{{elemento.ssh}}">
-            <div class="tiles_tile__front {{elemento.estilo.frente}}">
-              <h1 class="{{elemento.estilo.borda}}">
-                <img src='{{elemento.imagem.icone}}'>
-                {{elemento.nome}}
-              </h1>
-              <p>{{elemento.status}}</p>
-            </div>
-            <div class='tiles_tile__back'>
-              <div class='info'>
-                  <h1>{{elemento.detalhe}}</h1>
-              </div>
-              <div class='graphback'>
-                <img src='{{elemento.imagem.n3}}'>
-              </div>
-              <div class='graphmid'>
-                <img src='{{elemento.imagem.n2}}'>
-              </div>
-              <div class='graphfront'>
-                <img src='{{elemento.imagem.n1}}'>
-              </div>
-            </div>
-            <div class='tiles_tile__left {{elemento.estilo.borda}}'></div>
-            <div class='tiles_tile__right {{elemento.estilo.borda}}'></div>
-            <div class='tiles_tile__top {{elemento.estilo.borda}}'></div>
-            <div class='tiles_tile__bottom {{elemento.estilo.borda}}'></div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-    <div id="myModal" class="modal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <span class="close">&times;</span>
-          <h2>OS Impress</h2>
-        </div>
-        <div class="modal-body">
-          <img src="./assets/img/planta.png" alt="Planets" usemap="#planetmap" class="planta">
-          <map name="planetmap" ng-repeat="computador in computadores">
-            <area shape="rect" class="{{computador.classe}} {{computador.estilo.mapa}}" href="{{computador.ssh}}">
-          </map>
-        </div>
-        <!--<div class="modal-footer">
-        </div>-->
-      </div>
-    </div>
-  <script type="text/javascript" src="./node_modules/angular/angular.min.js"></script>
-  <script type="text/javascript" src="./app/monitoramento.module.js"></script>
-  <script type="text/javascript" src="./app/monitoramento.controller.js"></script>
+  <div ui-view="monitoramento"></div>
+
+  <script type="text/javascript" src="./bower_components/angular/angular.min.js"></script>
+  <script type="text/javascript" src="./bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+  <script type="text/javascript" src="./app/app.module.js"></script>
+  <script type="text/javascript" src="./app/app.config.js"></script>
+  
+  <script type="text/javascript" src="./app/app.controller.js"></script>
+  <script type="text/javascript" src="./app/components/monitoramento/monitoramento.controller.js"></script>
+
   <script type="text/javascript" src="./app/modal/modal.js"></script>
+
+
 </body>
 </html>
