@@ -9,13 +9,8 @@
                     nome: 'Servidor 1',
                     arquivo: './assets/servidores/servidor1.txt',
                     detalhe: 'Monitoramento + NIS',
-                    status: "0",
                     classe: "srv1",
-                    estilo:{
-                        frente: '',
-                        borda: '',
-                        mapa: ''
-                    },
+                    ativo: false,
                     imagem:{
                         icone: './assets/img/dash.png',
                         n1: './assets/img/raspberry.png',
@@ -28,13 +23,8 @@
                     nome: 'Servidor 2',
                     arquivo: './assets/servidores/servidor2.txt',
                     detalhe: 'Gateway 1',
-                    status: "0",
                     classe: "srv2",
-                    estilo:{
-                        frente: '',
-                        borda: '',
-                        mapa: ''
-                    },
+                    ativo: false,
                     imagem:{
                         icone: './assets/img/dash.png',
                         n1: './assets/img/ubuntu5.png',
@@ -47,13 +37,8 @@
                     nome: 'Servidor 3',
                     arquivo: './assets/servidores/servidor3.txt',
                     detalhe: 'Gateway 2',
-                    status: "0",
                     classe: "srv3",
-                    estilo:{
-                        frente: '',
-                        borda: '',
-                        mapa: ''
-                    },
+                    ativo: false,
                     imagem:{
                         icone: './assets/img/dash.png',
                         n1: './assets/img/ubuntu4.png',
@@ -66,13 +51,8 @@
                     nome: 'Cliente',
                     arquivo: './assets/servidores/cliente.txt',
                     detalhe: 'Cliente Linux',
-                    status: "0",
                     classe: "cliente",
-                    estilo:{
-                        frente: '',
-                        borda: '',
-                        mapa: ''
-                    },
+                    ativo: false,
                     imagem:{
                         icone: './assets/img/dash.png',
                         n1: './assets/img/transparente.png',
