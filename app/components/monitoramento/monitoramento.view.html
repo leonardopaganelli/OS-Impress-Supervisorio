@@ -6,18 +6,18 @@
           <img src="./assets/img/LogoInicio.png" width="200px" height="200px"></img>
           <h1>Sistema de Monitoramento</h1>
         <button id="myBtn" class="button" style="vertical-align:middle"><span>Abrir o mapa</span></button>
-    
           </br></br>
           <br>
           <div class='tiles'>
             <div class='tiles_tile' ng-repeat="elemento in computadores">
               <a href="{{elemento.ssh}}">
-                <div class="tiles_tile__front {{elemento.estilo.frente}}">
-                  <h1 class="{{elemento.estilo.borda}}">
-                    <img src='{{elemento.imagem.icone}}'>
+                <div class="tiles_tile__front"
+                     ng-class="elemento.ativo ? 'tile_true' : 'tile_false' ">
+                <h1 ng-class="elemento.ativo ? 'tile_border_true' : 'tile_border_false' ">
+                    <img ng-src='{{elemento.ativo ? "./assets/img/ativo.png" :  "./assets/img/inativo.png"}}'>
                     {{elemento.nome}}
                   </h1>
-                  <p>{{elemento.status}}</p>
+                  <p>{{elemento.ativo ? 'Ativo' : 'Inativo'}}</p>
                 </div>
                 <div class='tiles_tile__back'>
                   <div class='info'>
@@ -33,10 +33,18 @@
                     <img src='{{elemento.imagem.n1}}'>
                   </div>
                 </div>
-                <div class='tiles_tile__left {{elemento.estilo.borda}}'></div>
-                <div class='tiles_tile__right {{elemento.estilo.borda}}'></div>
-                <div class='tiles_tile__top {{elemento.estilo.borda}}'></div>
-                <div class='tiles_tile__bottom {{elemento.estilo.borda}}'></div>
+                <div class='tiles_tile__left'
+                     ng-class="elemento.ativo ? 'tile_true' : 'tile_false' ">
+                </div>
+                <div class='tiles_tile__right'
+                     ng-class="elemento.ativo ? 'tile_border_true' : 'tile_border_false' ">
+                </div>
+                <div class='tiles_tile__top {{elemento.estilo.borda}}'
+                    ng-class="elemento.ativo ? 'tile_border_true' : 'tile_border_false' ">
+                </div>
+                <div class='tiles_tile__bottom'
+                     ng-class="elemento.ativo ? 'tile_border_true' : 'tile_border_false' ">
+                </div>
               </a>
             </div>
           </div>
@@ -49,13 +57,13 @@
         <h2>OS Impress</h2>
         </div>
         <div class="modal-body">
-        <img src="./assets/img/planta.png" alt="Planets" usemap="#planetmap" class="planta">
-        <map name="planetmap" ng-repeat="computador in computadores">
-            <area shape="rect" class="{{computador.classe}} {{computador.estilo.mapa}}" href="{{computador.ssh}}">
-        </map>
+          <img src="./assets/img/planta.png" alt="Planta baixa do predio" usemap="#plantaBaixa" class="planta">
+          <map name="plantaBaixa" ng-repeat="computador in computadores">
+              <area shape="rect" class="{{computador.classe}}"
+              ng-class="elemento.ativo ? 'map_true' : 'map_false' "
+              href="{{computador.ssh}}">
+          </map>
         </div>
-        <!--<div class="modal-footer">
-        </div>-->
     </div>
     </div>
 
